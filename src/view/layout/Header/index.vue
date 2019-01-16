@@ -1,16 +1,24 @@
 <template>
   <div class="header">
-    <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <div class="logo">
-        <img  src=""  alt="element-logo" class="nav-logo">
+        <img  src="../../../assets/logo.png"  alt="element-logo" class="nav-logo">
+        <b>后台管理系统</b>
       </div>
-      <el-submenu index="3">
-        <template slot="title">{{username}}(系统管理员)</template>
-        <el-menu-item index="2-1" @click="signOut">退出登录</el-menu-item>
+      <el-menu-item index="1">处理中心</el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">我的工作台</template>
+        <el-menu-item index="2-1">选项一</el-menu-item>
+        <el-menu-item index="2-2">选项二</el-menu-item>
+        <el-menu-item index="2-3">选项三</el-menu-item>
       </el-submenu>
-      <el-menu-item index=""></el-menu-item>
+      <el-submenu index="3">
+        <template slot="title"><img class="headerPhoto" src="../../../assets/headPhoto.jpg"></template>
+        <template slot="title">{{username}}(系统管理员)</template>
+        <el-menu-item index="3-2" @click="signOut">退出登录</el-menu-item>
+      </el-submenu>
     </el-menu>
-    <div class="line"> </div>
+    <div class="line"></div>
   </div>
 </template>
 
@@ -33,9 +41,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .logo {
-    outline: none
+    outline: none;
   }
   .header {
     width: 100%;
@@ -51,12 +59,21 @@ export default {
         position: relative;
       }
       .logo {
-        flex: 1;
+        flex: 2;
         position: relative;
         top: 10px;
         left: 10px;
       }
+      .headerPhoto {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .nav-logo {
+        width: 50px;
+        height: 40px;
+        border-radius: 10px;
+      }
     }
-
   }
 </style>
