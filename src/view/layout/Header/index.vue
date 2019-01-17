@@ -2,7 +2,7 @@
   <div class="header">
     <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <div class="logo">
-        <img  src="../../../assets/logo.png"  alt="element-logo" class="nav-logo">
+        <img  src="~@/assets/logo.png"  alt="element-logo" class="nav-logo">
         <b>后台管理系统</b>
       </div>
       <el-menu-item index="1">处理中心</el-menu-item>

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '../view/layout/Main/home.vue'
 import login from '../components/login'
 import basetable from '../components/basetable'
+import chart from '../components/charts'
 
 Vue.use(Router)
 
@@ -15,6 +16,10 @@ export default new Router({
         {
           path: '/home/basetable',
           component: basetable
+        },
+        {
+          path: '/home/charts',
+          component: chart
         }
       ]
     },
