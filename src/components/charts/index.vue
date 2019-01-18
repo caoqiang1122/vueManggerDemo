@@ -75,6 +75,12 @@ export default{
 </script>
 <style lang="scss">
   .charts {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    top: 70px;
+    left: 200px;
     .first, .second, .third, .forth, .five {
       width: 100%;
       display: flex;

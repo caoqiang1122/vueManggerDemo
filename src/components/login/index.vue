@@ -9,11 +9,11 @@
         <p>系统登录</p>
         <label>
           <i class="fa fa-user-o fw" aria-hidden="true"></i>
-          <input type="text" v-model="username" placeholder="用户名">
+          <input type="text" v-model="loginParam.username" placeholder="用户名">
         </label>
         <label>
           <i class="fa fa-lock fw" aria-hidden="true"></i>
-          <input type="password" v-model="password" placeholder="密码">
+          <input type="password" v-model="loginParam.password" placeholder="密码">
         </label>
         <button @click="doLogin">确认登录</button>
       </div>
@@ -25,25 +25,27 @@
 export default {
   data () {
     return {
-      username: '',
-      password: ''
+      loginParam: {
+        username: '',
+        password: ''
+      }
     }
   },
   methods: {
     checkValidity () {
       let isValid = true
 
-      if (!this.username || !this.password) {
-        this.$message.error({message: this.username ? '密码不能为空' : '用户名不能为空'})
+      if (!this.loginParam.username || !this.loginParam.password) {
+        this.$message.error({message: this.loginParam.username ? '密码不能为空' : '用户名不能为空'})
         return false
       }
 
-      if (!/^[-a-zA-Z0-9_]{2,30}$/.test(this.username)) {
+      if (!/^[-a-zA-Z0-9_]{2,30}$/.test(this.loginParam.username)) {
         this.$message.error({message: '奇怪的用户名'})
         isValid = false
       }
 
-      if (this.password.legend < 3) {
+      if (this.loginParam.password.legend < 3) {
         this.$message.error({message: '密码长度太短'})
         isValid = false
       }
@@ -52,8 +54,15 @@ export default {
     },
     doLogin () {
       if (this.checkValidity()) {
-        window.localStorage.setItem('username', this.username)
-        this.$router.push({path: '/home'})
+        this.$store
+          .dispatch('system/login/login', this.loginParam)
+          .then(response => {
+            window.localStorage.setItem('username', this.loginParam.username)
+            this.$router.push({path: '/home'})
+          })
+          .catch(e => {
+            this.$router.push({path: '/'})
+          })
       }
     }
   }
