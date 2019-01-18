@@ -46,8 +46,8 @@ function createAxios () {
   function configResponseInterceptor () {
     return [
       response => {
-        if (response.config.method === 'post') {
-          // 去掉重复请求
+        if (response.data.status === 400) {
+          alert(response.data.msg)
         }
         return response
       },

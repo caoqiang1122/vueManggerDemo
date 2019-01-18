@@ -57,8 +57,13 @@ export default {
         this.$store
           .dispatch('system/login/login', this.loginParam)
           .then(response => {
+            // console.log(response.config.status)
+            // if (response.status === 400) {
+            //   console.log(response)
+            // } else {
             window.localStorage.setItem('username', this.loginParam.username)
             this.$router.push({path: '/home'})
+            // }
           })
           .catch(e => {
             this.$router.push({path: '/'})
