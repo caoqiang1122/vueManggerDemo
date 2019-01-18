@@ -12,7 +12,7 @@ export default config => {
 function createAxios () {
   let axiosService = axios.create({
     // baseURL: 'http://localhost:8018',
-    timeout: 3000,
+    // timeout: 3000,
     // 通过这个设定可以让发送跨域请求是携带cookies等凭证信息，但是，这时要求服务的Access-Control-Allow-Origin不能为*，必须是具体的domain
     withCredentials: true
   })
