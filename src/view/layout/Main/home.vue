@@ -40,10 +40,11 @@ export default {
 
 $commonColor: '#20a0ff';
 .home {
+  width: 100%;
   .content {
     position: absolute;
-    left: 200px;
-    top: 70px;
+    left: 0;
+    top: 10px;
     bottom: 0;
     overflow: scroll;
     width: calc(100% - 210px);
