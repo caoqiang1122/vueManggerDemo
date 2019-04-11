@@ -1,19 +1,38 @@
-.DS_Store
-node_modules/
-/dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-.idea/  
-.vscode/  
-bin/  
-pkg/ 
+# ignore this file
+target
+.classpath
+.project
+.settings 
+.settings/
+bin/
+logs/
+build/
+./idea*
+out/
+.idea/
+/.DS_Store
+# filter databfile¡¢sln file
+*.mdb  
+*.ldb  
+*.sln    
+# class file
+*.com  
+*.class 
+*.iml
+*.dll  
+*.exe  
+*.o  
+*.so  
+# compression file
+*.7z  
+*.dmg  
+*.gz  
+*.iso  
+*.jar  
+*.rar  
+*.tar  
+*.zip  
+*.via
+*.tmp
+*.err 
+*.war
